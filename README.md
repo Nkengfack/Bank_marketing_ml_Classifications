@@ -12,8 +12,8 @@ The constraint matters. The strongest predictor in this dataset, call duration, 
 | | |
 |---|---|
 | Final model | XGBoost, without duration, decision threshold 0.20 |
-| Test F1 | 0.530 (95% bootstrap CI 0.503 to 0.555) |
-| Test PR-AUC | 0.487 (95% CI 0.452 to 0.523), against a 0.113 no-skill baseline |
+| Test F1 | 0.530 |
+| Test PR-AUC | 0.487 , against a 0.113 no-skill baseline |
 | Test ROC-AUC | 0.81 (the published benchmark, Moro et al. 2014, is ~0.80) |
 | Cost of removing duration | 0.14 ROC-AUC and up to 0.19 PR-AUC, for every model family |
 | Business reading | Call 14% of the client list, reach 60% of the subscribers in it (4.2x lift) |
@@ -32,20 +32,6 @@ Six models were compared through one identical pipeline: Logistic Regression, De
 
 The notebook also writes outputs when run: result tables as CSV (`baseline_results.csv`, `tuned_with_duration.csv`, `tuned_without_duration.csv`, `duration_impact.csv`), all figures as PNG, and the deployable artefacts `final_model.joblib` and `final_threshold.joblib`.
 
-## How to run
-
-**Easiest: Google Colab.** Open `bank_marketing_ML_test.ipynb` in Colab and run all cells. The notebook loads the dataset directly from this repository over HTTPS, so no upload is needed. The full run, including both tuning passes, takes roughly 30 to 60 minutes on a standard Colab instance; everything before Section 4.6 runs in a few minutes.
-
-**Locally:**
-
-```bash
-git clone https://github.com/Nkengfack/Bank_marketing_ml_Classifications.git
-cd Bank_marketing_ml_Classifications
-pip install pandas numpy scikit-learn xgboost lightgbm matplotlib seaborn joblib
-jupyter notebook bank_marketing_ML_test.ipynb   # or: python bank_marketing_ml_test.py
-```
-
-Tested with Python 3.10+. No GPU is required.
 
 **Using the saved model:**
 
