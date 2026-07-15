@@ -68,4 +68,4 @@ The dataset was created by Moro, Cortez and Rita and is distributed through the 
 
 ## Author
 
-Nicolas Nkengfack, MSc Data Science, University of Hertfordshire.
+Nicolas Nimach Nkengfack, MSc Data Science, University of Hertfordshire.
